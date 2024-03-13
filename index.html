@@ -9,16 +9,20 @@
 </head>
 <body>
     <h1 class="title">Tic Tac Toe</h1>
-        <div class="container">
-            <div class="gridBox gridBox0"></div>
-            <div class="gridBox gridBox1"></div>
-            <div class="gridBox gridBox2"></div>
-            <div class="gridBox gridBox3"></div>
-            <div class="gridBox gridBox4"></div>
-            <div class="gridBox gridBox5"></div>
-            <div class="gridBox gridBox6"></div>
-            <div class="gridBox gridBox7"></div>
-            <div class="gridBox gridBox8"></div>
+        <div class="container circle" id="container">
+            <div class="cell x gridBox0"></div>
+            <div class="cell circle gridBox1"></div>
+            <div class="cell gridBox2"></div>
+            <div class="cell gridBox3"></div>
+            <div class="cell gridBox4"></div>
+            <div class="cell gridBox5"></div>
+            <div class="cell gridBox6"></div>
+            <div class="cell gridBox7"></div>
+            <div class="cell gridBox8"></div>
+        </div>
+        <div class="gameFinished" id="gameFinished">
+            <div data-winnning-message-text></div>
+            <button id='reset-button'>Restart?</button>
         </div>
 </body>
 </html>
