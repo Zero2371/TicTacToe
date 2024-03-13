@@ -14,6 +14,15 @@ body{
     text-align: center;
     height: 100vh;
 }
+
+
+.title{
+    margin: 15px 0;
+    font-size: 3rem;
+}
+
+
+
 .container{
     border: none;
     width: 100vh;
@@ -49,16 +58,28 @@ body{
 .gridBox:nth-child(7), .gridBox:nth-child(8), .gridBox:nth-child(9){
     border-bottom: none;
 }
+
+
+
+
 .cell.x,
 .cell.circle{
     cursor: not-allowed;
 }
+
 .cell.x::before,
-.cell.x::after{
+.cell.x::after,
+.cell.circle::before{
     background-color: white;
 }
+
+ 
+
+
 .container.x .cell:not(.x):not(.circle):hover::before,
-.container.x .cell:not(.x):not(.circle):hover::after{
+.container.x .cell:not(.x):not(.circle):hover::after,
+.container.circle .cell:not(.x):not(.circle):hover::before,
+.container.circle .cell:not(.x):not(.circle):hover::after{
 background-color: red;
 }   
 
@@ -84,24 +105,59 @@ background-color: red;
 
 
 .cell.circle:before,
-.cell.circle:after{
+.cell.circle:after,
+.container.circle .cell:not(.x):not(.circle):hover::before,
+.container.circle .cell:not(.x):not(.circle):hover::after
+ {
     content: '';
     position: absolute;
     border-radius: 50%;
 }
-.cell.circle:before{
+.cell.circle:before,
+.container.circle .cell:not(.x):not(.circle):hover::before
+{
     width: var(--mark-size);
     height: var(--mark-size);
-    background-color: white;
 }
-.cell.circle:after{
+.cell.circle:after,
+.container.circle .cell:not(.x):not(.circle):hover::after{
     width: calc(var(--mark-size) * 0.7);
     height: calc(var(--mark-size) * 0.7);
     background-color: black;
 }
 
 
-.title{
-    margin: 15px 0;
+
+
+.gameFinished{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.gameFinished button{
     font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .2rem .5em;
+    cursor: pointer;
+}
+
+.gameFinished button:hover{
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+.gameFinished.show{
+    display: flex;
 }
